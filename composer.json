@@ -18,6 +18,7 @@
 		"check-cs": "vendor/bin/php-cs-fixer fix --dry-run",
 		"fix-cs": "vendor/bin/php-cs-fixer fix",
 		"test": "vendor/bin/phpunit --colors=always",
-		"build": ["@check-cs", "@test"]
+		"mutate": "vendor/bin/infection",
+		"build": ["@check-cs", "@test", "@mutate"]
 	}
 }
