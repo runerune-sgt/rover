@@ -19,6 +19,6 @@
 		"fix-cs": "vendor/bin/php-cs-fixer fix",
 		"test": "vendor/bin/phpunit --colors=always",
 		"mutate": "vendor/bin/infection",
-		"build": ["@check-cs", "@test", "@mutate"]
+		"build": ["@check-cs", "@test"]
 	}
 }
