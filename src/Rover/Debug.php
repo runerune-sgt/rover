@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+/*declare(strict_types=1);
 
 namespace MarsRover\Rover;
 
@@ -53,4 +53,4 @@ class Debug {
 
 		echo static::$template_footer."\n";
 	}
-}
+}*/

@@ -35,6 +35,8 @@ class Orientation {
 				return $i;
 			}
 		}
+
+		throw new \OutOfBoundsException('Unknown turn command', 201);
 	}
 
 	public function orient($index) {
@@ -62,7 +64,7 @@ class Orientation {
 				$orientation++;
 			break;
 			default:
-				throw new \Exception('Unknown turn command', 201);
+				throw new \InvalidArgumentException('Unknown turn command', 201);
 		}
 
 		$new_orientation = $this->orient($orientation);

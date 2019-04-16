@@ -14,6 +14,13 @@ class OrientationTest extends TestCase {
 		self::assertEquals(3, $pos->determine_orientation());
 	}
 
+	public function testGetOrientationBadVector() {
+		$pos = new Orientation(0, 0);
+
+		static::expectException(\OutOfBoundsException::class);
+		$pos->determine_orientation();
+	}
+
 	public function testWrongOrientationXConstructor() {
 		static::expectException(\InvalidArgumentException::class);
 		$pos = new Orientation(-2, 0);
@@ -31,6 +38,12 @@ class OrientationTest extends TestCase {
 		self::assertEquals([0, -1], $pos->orient(1));
 	}
 
+	public function testSetOrientationOutOfBounds() {
+		$pos = new Orientation(-1, 0);
+
+		self::assertEquals([0, -1], $pos->orient(5));
+	}
+
 	public function testTurn() {
 		$pos = new Orientation(1, 0);
 
@@ -39,6 +52,13 @@ class OrientationTest extends TestCase {
 
 		$pos = $pos->turn(Orientation::TURN_RIGHT);
 		self::assertEquals([1, 0], $pos->vector);
+	}
+
+	public function testTurnInsupportedOperation() {
+		$pos = new Orientation(1, 0);
+
+		static::expectException(\InvalidArgumentException::class);
+		$pos = $pos->turn(9999);
 	}
 
 
