@@ -12,5 +12,11 @@
 	},
 	"autoload-dev": {
 		"MarsRover\\Tests": "tests/"
+	},
+	"scripts": {
+		"check-cs": "php-cs-fixer fix --dry-run",
+		"fix-cs": "php-cs-fixer fix",
+		"test": "phpunit --colors=always",
+		"build": ["@check-cs", "@test"]
 	}
 }
