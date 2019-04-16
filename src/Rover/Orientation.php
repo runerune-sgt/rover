@@ -1,7 +1,8 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MarsRover\Rover;
-use MarsRover\Rover\Debug;
 
 class Orientation {
 	public $vector;
@@ -13,7 +14,7 @@ class Orientation {
 
 	//------------------------------------------
 
-	public function __construct($orient_x=1, $orient_y=0) {
+	public function __construct($orient_x = 1, $orient_y = 0) {
 		if($orient_x > 1 || $orient_x < -1) {
 			throw new \InvalidArgumentException('invalid orient_x', 202);
 		}
@@ -29,22 +30,22 @@ class Orientation {
 		$ov = static::$orientation_vector;
 		$ov_size = sizeof(static::$orientation_vector);
 
-		for($i=0; $i < $ov_size; $i++) {
-			if($ov[$i] === $this->vector[0] && $ov[$i+1] === $this->vector[1]) {
+		for($i = 0; $i < $ov_size; ++$i) {
+			if($ov[$i] === $this->vector[0] && $ov[$i + 1] === $this->vector[1]) {
 				return $i;
 			}
 		}
 	}
 
 	public function orient($index) {
-		$ov_size_limit = sizeof(static::$orientation_vector)-1;
+		$ov_size_limit = sizeof(static::$orientation_vector) - 1;
 
 		if($index > $ov_size_limit) {
 			$index %= $ov_size_limit;
 		}
 
 		if($index < 0) {
-			$index = $ov_size_limit-1;
+			$index = $ov_size_limit - 1;
 		}
 
 		return array_slice(static::$orientation_vector, $index, 2);
@@ -65,7 +66,7 @@ class Orientation {
 		}
 
 		$new_orientation = $this->orient($orientation);
+
 		return new self(...$new_orientation);
 	}
-
 }

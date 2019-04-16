@@ -1,7 +1,8 @@
 {
     "name": "mikolaj/szkolenie",
     "require-dev": {
-        "phpunit/phpunit": "^6.5"
+        "phpunit/phpunit": "^6.5",
+        "friendsofphp/php-cs-fixer": "^2.14"
     },
 	"require": {},
 	"autoload": {

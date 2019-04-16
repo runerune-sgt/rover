@@ -1,7 +1,8 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MarsRover\Rover;
-use MarsRover\Rover\Position;
 
 interface Sensor {
 	public function isObstacle(Position $position);

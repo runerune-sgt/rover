@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MarsRover;
 use MarsRover\Rover\Orientation;
 use MarsRover\Rover\Position;
@@ -51,6 +53,4 @@ class Rover {
 			new Debug($this->position, $this->orientation);
 		}
 	}
-
-
 }

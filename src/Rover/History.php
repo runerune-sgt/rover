@@ -1,8 +1,8 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MarsRover\Rover;
-use MarsRover\Rover\Orientation;
-use MarsRover\Rover\Position;
 
 class History {
 	public $registry;
@@ -17,7 +17,6 @@ class History {
 		$entry->position = $position;
 		$entry->orientation = $orientation;
 
-		$this->registry[]= $entry;
+		$this->registry[] = $entry;
 	}
-
 }

@@ -1,8 +1,8 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MarsRover\Rover;
-use MarsRover\Rover\Orientation;
-use MarsRover\Rover\Debug;
 
 class Position {
 	public $x;
@@ -39,10 +39,9 @@ class Position {
 	}
 
 	public function back(Orientation $orientation) {
-		$new_x = $this->x + (-1*$orientation->vector[1]);
-		$new_y = $this->y + (-1*$orientation->vector[0]);
+		$new_x = $this->x + (-1 * $orientation->vector[1]);
+		$new_y = $this->y + (-1 * $orientation->vector[0]);
 
 		return new self($new_x, $new_y);
 	}
-
 }

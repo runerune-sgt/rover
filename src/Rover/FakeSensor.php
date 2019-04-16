@@ -1,7 +1,8 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MarsRover\Rover;
-use MarsRover\Rover\Position;
 
 class FakeSensor implements Sensor {
 	private $obstacles = [];
@@ -19,5 +20,4 @@ class FakeSensor implements Sensor {
 
 		return false;
 	}
-
 }

@@ -1,8 +1,8 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MarsRover\Rover;
-use MarsRover\Rover\Orientation;
-use MarsRover\Rover\Position;
 
 class Debug {
 	private $orientation;
@@ -36,10 +36,10 @@ class Debug {
 		echo "\n";
 		echo static::$template_header."\n";
 
-		for($print_x=4; $print_x>=0; $print_x--) {
+		for($print_x = 4; $print_x >= 0; --$print_x) {
 			if($print_x === $this->position->x) {
 				$formatted_line = static::$template_line;
-				$position = 1+(2*$this->position->y);
+				$position = 1 + (2 * $this->position->y);
 
 				$orientation_debug_id = $this->orientation->vector[1].'|'.$this->orientation->vector[0];
 				$orientation_char = static::$orientation_cheatsheet[$orientation_debug_id];
@@ -53,5 +53,4 @@ class Debug {
 
 		echo static::$template_footer."\n";
 	}
-
 }
