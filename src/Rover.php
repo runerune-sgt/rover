@@ -6,9 +6,6 @@ namespace MarsRover;
 use MarsRover\Rover\Orientation;
 use MarsRover\Rover\Position;
 use MarsRover\Rover\Sensor;
-//use MarsRover\Rover\Debug;
-
-//define('DEBUG', false);
 
 class Rover {
 	public $orientation;
@@ -19,8 +16,6 @@ class Rover {
 		$this->position = $position;
 		$this->orientation = $orientation;
 		$this->sensor = $sensor;
-
-		//new Debug($this->position, $this->orientation);
 	}
 
 	public function handle($commands) {
@@ -49,8 +44,6 @@ class Rover {
 				default:
 					throw new \InvalidArgumentException('Unknown command.', 101);
 			}
-
-			//new Debug($this->position, $this->orientation);
 		}
 	}
 }
