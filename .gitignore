@@ -1,4 +1,4 @@
-/.vscode
+/.vscode/
 /vendor/
 /build
 .php_cs.cache
